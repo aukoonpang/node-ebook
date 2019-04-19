@@ -2,6 +2,7 @@ const express = require('express')
 const mysql = require('mysql')
 const constant = require('./const')
 const cors = require('cors')
+const voice = require('./voice')
 
 const app = express()
 app.use(cors())
@@ -349,6 +350,10 @@ app.get('/book/shelf', (req, res) => {
     res.json({
         bookList: []
     })
+})
+
+app.get('/voice', (req, res) => {
+    voice(req, res)
 })
 
 const server = app.listen(3000, () => {
