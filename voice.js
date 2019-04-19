@@ -68,7 +68,7 @@ function createVoice(req, res) {
                 res.send(mp3)
             } else {
                 const fileName = new Date().getTime()
-                const filePath = `${mp3FilePath}\\${fileName}.mp3`
+                const filePath = `${mp3FilePath}/${fileName}.mp3`
                 const downloadUrl = `${resUrl}/mp3/${fileName}.mp3`
                 fs.writeFile(filePath, mp3, 'binary', err => {
                     if (err) {
